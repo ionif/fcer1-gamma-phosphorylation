@@ -26,7 +26,7 @@ begin parameters
     Lig_conc      10e-9      # initial ligand concentration, M
 
     # simulation scale
-    f         1e-3                              # fraction of simulated cell     
+    f         1                              # fraction of simulated cell     
     Vec       (1/cell_density)*f                # reactor volume, extracellular
     Vcp       vol_cell*f                        # reactor volume, cytoplasm 
 
@@ -59,7 +59,7 @@ begin parameters
     dm    20
     dc    20
     #receptor degradation rate
-    de    7 #e-1, e-2, e-3
+    de    7e-4 #e-1, e-2, e-3, e-4, -5
     #catalytic rate
     catp  1 #0.01 - 10
 end parameters
@@ -221,7 +221,9 @@ begin reaction rules
 
     Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
     Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSSs
+    
     #nSH2,cSH2
+    
     Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
     Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSSs
 
@@ -282,7 +284,7 @@ begin reaction rules
     Syk(cSH2,a~pY)-> Syk(cSH2,a~Y)  dc
 
     #receptor degradation/endocytosis
-    Rec() -> 0 de
+    Rec() -> 0 de  
 
     #Dephosphorylation of tyrosines by phosphatase
     P(SH2) + Rec(Y1~P) <-> P(SH2!1).Rec(Y1~P!1) kpS, kmS
