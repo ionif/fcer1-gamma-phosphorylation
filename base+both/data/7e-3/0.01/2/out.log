@@ -8,8 +8,8 @@ Read 68 reaction rule(s).
 ACTION: simulate_nf( )
 Wrote model in xml format to /home/alex/work/alex/data/2/gamma2both.xml.
 Running NFsim on hop0.usrc.newmexicoconsortium.org
-full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/2/gamma2both.xml -o /home/alex/work/alex/data/2/gamma2both.gdat -sim 1200 -oSteps 100 -ss /home/alex/work/alex/data/2/gamma2both.species -cb -gml 200000000
-[simulation PID is: 7819]
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/2/gamma2both.xml -o /home/alex/work/alex/data/2/gamma2both.gdat -sim 360 -oSteps 6 -gml 200000000 -cb -ss /home/alex/work/alex/data/2/gamma2both.species
+[simulation PID is: 10754]
 starting NFsim v1.11...
 
 reading xml file (/home/alex/work/alex/data/2/gamma2both.xml)  
@@ -20,93 +20,31 @@ preparing simulation...
 
 Equilibrating for :0s.  Please wait.
 
-simulating system for: 1.200000e+03 second(s).
+simulating system for: 3.600000e+02 second(s).
 
-Sim time: 0.000000e+00	CPU time (total): 6.100000e-05s	 events (step): 0
-Sim time: 1.200000e+01	CPU time (total): 1.017650e+01s	 events (step): 743784
-Sim time: 2.400000e+01	CPU time (total): 2.727674e+01s	 events (step): 764617
-Sim time: 3.600000e+01	CPU time (total): 4.524974e+01s	 events (step): 719967
-Sim time: 4.800000e+01	CPU time (total): 6.262221e+01s	 events (step): 658044
-Sim time: 6.000000e+01	CPU time (total): 7.833561e+01s	 events (step): 589857
-Sim time: 7.200000e+01	CPU time (total): 9.262454e+01s	 events (step): 531282
-Sim time: 8.400000e+01	CPU time (total): 1.041723e+02s	 events (step): 461359
-Sim time: 9.600000e+01	CPU time (total): 1.093327e+02s	 events (step): 394338
-Sim time: 1.080000e+02	CPU time (total): 1.137690e+02s	 events (step): 356251
-Sim time: 1.200000e+02	CPU time (total): 1.174283e+02s	 events (step): 307307
-Sim time: 1.320000e+02	CPU time (total): 1.208783e+02s	 events (step): 281177
-Sim time: 1.440000e+02	CPU time (total): 1.238861e+02s	 events (step): 245604
-Sim time: 1.560000e+02	CPU time (total): 1.265007e+02s	 events (step): 216749
-Sim time: 1.680000e+02	CPU time (total): 1.289073e+02s	 events (step): 194340
-Sim time: 1.800000e+02	CPU time (total): 1.310601e+02s	 events (step): 173745
-Sim time: 1.920000e+02	CPU time (total): 1.330718e+02s	 events (step): 156972
-Sim time: 2.040000e+02	CPU time (total): 1.349934e+02s	 events (step): 144579
-Sim time: 2.160000e+02	CPU time (total): 1.366666e+02s	 events (step): 127353
-Sim time: 2.280000e+02	CPU time (total): 1.380373e+02s	 events (step): 109891
-Sim time: 2.400000e+02	CPU time (total): 1.391583e+02s	 events (step): 95766
-Sim time: 2.520000e+02	CPU time (total): 1.402397e+02s	 events (step): 88862
-Sim time: 2.640000e+02	CPU time (total): 1.412411e+02s	 events (step): 79269
-Sim time: 2.760000e+02	CPU time (total): 1.422491e+02s	 events (step): 75285
-Sim time: 2.880000e+02	CPU time (total): 1.430618e+02s	 events (step): 64778
-Sim time: 3.000000e+02	CPU time (total): 1.439055e+02s	 events (step): 61619
-Sim time: 3.120000e+02	CPU time (total): 1.446096e+02s	 events (step): 52692
-Sim time: 3.240000e+02	CPU time (total): 1.452042e+02s	 events (step): 45758
-Sim time: 3.360000e+02	CPU time (total): 1.457969e+02s	 events (step): 42431
-Sim time: 3.480000e+02	CPU time (total): 1.463489e+02s	 events (step): 39680
-Sim time: 3.600000e+02	CPU time (total): 1.468960e+02s	 events (step): 36878
-Sim time: 3.720000e+02	CPU time (total): 1.473681e+02s	 events (step): 33412
-Sim time: 3.840000e+02	CPU time (total): 1.477581e+02s	 events (step): 28833
-Sim time: 3.960000e+02	CPU time (total): 1.481829e+02s	 events (step): 28091
-Sim time: 4.080000e+02	CPU time (total): 1.484703e+02s	 events (step): 21622
-Sim time: 4.200000e+02	CPU time (total): 1.486896e+02s	 events (step): 18201
-Sim time: 4.320000e+02	CPU time (total): 1.488837e+02s	 events (step): 15683
-Sim time: 4.440000e+02	CPU time (total): 1.490255e+02s	 events (step): 12917
-Sim time: 4.560000e+02	CPU time (total): 1.491871e+02s	 events (step): 12124
-Sim time: 4.680000e+02	CPU time (total): 1.493480e+02s	 events (step): 10810
-Sim time: 4.800000e+02	CPU time (total): 1.494838e+02s	 events (step): 9242
-Sim time: 4.920000e+02	CPU time (total): 1.496262e+02s	 events (step): 8757
-Sim time: 5.040000e+02	CPU time (total): 1.497263e+02s	 events (step): 6971
-Sim time: 5.160000e+02	CPU time (total): 1.497832e+02s	 events (step): 4846
-Sim time: 5.280000e+02	CPU time (total): 1.498461e+02s	 events (step): 4423
-Sim time: 5.400000e+02	CPU time (total): 1.499075e+02s	 events (step): 3640
-Sim time: 5.520000e+02	CPU time (total): 1.499904e+02s	 events (step): 3818
-Sim time: 5.640000e+02	CPU time (total): 1.500614e+02s	 events (step): 3831
-Sim time: 5.760000e+02	CPU time (total): 1.501309e+02s	 events (step): 3609
-Sim time: 5.880000e+02	CPU time (total): 1.502099e+02s	 events (step): 3765
-Sim time: 6.000000e+02	CPU time (total): 1.502688e+02s	 events (step): 2865
-Sim time: 6.120000e+02	CPU time (total): 1.503335e+02s	 events (step): 2980
-Sim time: 6.240000e+02	CPU time (total): 1.503710e+02s	 events (step): 2136
-Sim time: 6.360000e+02	CPU time (total): 1.504137e+02s	 events (step): 2269
-Sim time: 6.480000e+02	CPU time (total): 1.504335e+02s	 events (step): 1624
-Sim time: 6.600000e+02	CPU time (total): 1.504558e+02s	 events (step): 1645
-Sim time: 6.720000e+02	CPU time (total): 1.504739e+02s	 events (step): 1321
-Sim time: 6.840000e+02	CPU time (total): 1.504909e+02s	 events (step): 1267
-Sim time: 6.960000e+02	CPU time (total): 1.505062e+02s	 events (step): 1083
-Sim time: 7.080000e+02	CPU time (total): 1.505172e+02s	 events (step): 857
-Sim time: 7.200000e+02	CPU time (total): 1.505352e+02s	 events (step): 975
-Sim time: 7.320000e+02	CPU time (total): 1.505577e+02s	 events (step): 1130
-Sim time: 7.440000e+02	CPU time (total): 1.505664e+02s	 events (step): 690
-Sim time: 7.560000e+02	CPU time (total): 1.505755e+02s	 events (step): 711
-Sim time: 7.680000e+02	CPU time (total): 1.505848e+02s	 events (step): 719
-Sim time: 7.800000e+02	CPU time (total): 1.505945e+02s	 events (step): 748
-Sim time: 7.920000e+02	CPU time (total): 1.506033e+02s	 events (step): 705
-Sim time: 8.040000e+02	CPU time (total): 1.506113e+02s	 events (step): 653
-Sim time: 1.200000e+03	CPU time (total): 1.506121e+02s	 events (step): 94
+Sim time: 0.000000e+00	CPU time (total): 5.300000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 4.859647e+01s	 events (step): 3524509
+Sim time: 1.200000e+02	CPU time (total): 8.236150e+01s	 events (step): 2126705
+Sim time: 1.800000e+02	CPU time (total): 1.006625e+02s	 events (step): 1177661
+Sim time: 2.400000e+02	CPU time (total): 1.101035e+02s	 events (step): 639075
+Sim time: 3.000000e+02	CPU time (total): 1.145788e+02s	 events (step): 335552
+Sim time: 3.600000e+02	CPU time (total): 1.169070e+02s	 events (step): 184738
 
-   You just simulated 8119301 reactions in 1.506121e+02s
-   ( 5.390870e+04 reactions/sec, 1.854988e-05 CPU seconds/event )
-   Null events: 0   (1.854988e-05 CPU seconds/non-null event )
+   You just simulated 7988241 reactions in 1.169070e+02s
+   ( 6.832986e+04 reactions/sec, 1.463489e-05 CPU seconds/event )
+   Null events: 0   (1.463489e-05 CPU seconds/non-null event )
 
 
 saving list of final molecular species...
 
-done.  Total CPU time: 152.435s
+done.  Total CPU time: 118.215s
 
 SpeciesLabel max molecule threshold set to 20.
 WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
 readNFspecies::Reading from file /home/alex/work/alex/data/2/gamma2both.species
-Read 0 unique species of 4 total.
+Read 12 unique species of 20 total.
 SpeciesLabel max molecule threshold set to 0.
   (all species will be labeled with the Auto method)
-CPU TIME: simulate_nf 152.53 s.
+CPU TIME: simulate_nf 118.31 s.
 Finished processing file gamma2both.bngl.
-CPU TIME: total 153.01 s.
+CPU TIME: total 118.57 s.

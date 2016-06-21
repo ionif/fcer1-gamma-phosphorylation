@@ -1,0 +1,50 @@
+BioNetGen version 2.2.6
+Reading from file gamma2both.bngl (level 0)
+Read 40 parameters.
+Read 5 molecule types.
+Read 5 species.
+Read 9 observable(s).
+Read 68 reaction rule(s).
+ACTION: simulate_nf( )
+Wrote model in xml format to /home/alex/work/alex/data/3/gamma2both.xml.
+Running NFsim on hop0.usrc.newmexicoconsortium.org
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/3/gamma2both.xml -o /home/alex/work/alex/data/3/gamma2both.gdat -sim 360 -oSteps 6 -ss /home/alex/work/alex/data/3/gamma2both.species -gml 200000000 -cb
+[simulation PID is: 9554]
+starting NFsim v1.11...
+
+reading xml file (/home/alex/work/alex/data/3/gamma2both.xml)  
+	[-------]
+preparing simulation...
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 3.600000e+02 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 5.500000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 5.648356e+01s	 events (step): 4320134
+Sim time: 1.200000e+02	CPU time (total): 1.222046e+02s	 events (step): 4160340
+Sim time: 1.800000e+02	CPU time (total): 1.892771e+02s	 events (step): 3890649
+Sim time: 2.400000e+02	CPU time (total): 2.577893e+02s	 events (step): 3689937
+Sim time: 3.000000e+02	CPU time (total): 3.271280e+02s	 events (step): 3544791
+Sim time: 3.600000e+02	CPU time (total): 3.972350e+02s	 events (step): 3458658
+
+   You just simulated 23064510 reactions in 3.972350e+02s
+   ( 5.806263e+04 reactions/sec, 1.722278e-05 CPU seconds/event )
+   Null events: 0   (1.722278e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+done.  Total CPU time: 398.586s
+
+SpeciesLabel max molecule threshold set to 20.
+WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
+readNFspecies::Reading from file /home/alex/work/alex/data/3/gamma2both.species
+Read 103 unique species of 143 total.
+SpeciesLabel max molecule threshold set to 0.
+  (all species will be labeled with the Auto method)
+CPU TIME: simulate_nf 398.96 s.
+Finished processing file gamma2both.bngl.
+CPU TIME: total 399.23 s.
