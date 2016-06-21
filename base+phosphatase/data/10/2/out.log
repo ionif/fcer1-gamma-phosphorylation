@@ -1,0 +1,50 @@
+BioNetGen version 2.2.6
+Reading from file gamma2phos.bngl (level 0)
+Read 39 parameters.
+Read 5 molecule types.
+Read 5 species.
+Read 9 observable(s).
+Read 67 reaction rule(s).
+ACTION: simulate_nf( )
+Wrote model in xml format to /home/alex/work/alex/data/2/gamma2phos.xml.
+Running NFsim on hop0.usrc.newmexicoconsortium.org
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/2/gamma2phos.xml -o /home/alex/work/alex/data/2/gamma2phos.gdat -sim 360 -oSteps 6 -gml 200000000 -cb -ss /home/alex/work/alex/data/2/gamma2phos.species
+[simulation PID is: 11448]
+starting NFsim v1.11...
+
+reading xml file (/home/alex/work/alex/data/2/gamma2phos.xml)  
+	[-------]
+preparing simulation...
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 3.600000e+02 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 5.700000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 5.703781e+01s	 events (step): 4395491
+Sim time: 1.200000e+02	CPU time (total): 1.247370e+02s	 events (step): 4274083
+Sim time: 1.800000e+02	CPU time (total): 1.926984e+02s	 events (step): 3998309
+Sim time: 2.400000e+02	CPU time (total): 2.615655e+02s	 events (step): 3816170
+Sim time: 3.000000e+02	CPU time (total): 3.314483e+02s	 events (step): 3693808
+Sim time: 3.600000e+02	CPU time (total): 4.031448e+02s	 events (step): 3647233
+
+   You just simulated 23825095 reactions in 4.031448e+02s
+   ( 5.909810e+04 reactions/sec, 1.692102e-05 CPU seconds/event )
+   Null events: 0   (1.692102e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+done.  Total CPU time: 404.516s
+
+SpeciesLabel max molecule threshold set to 20.
+WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
+readNFspecies::Reading from file /home/alex/work/alex/data/2/gamma2phos.species
+Read 84 unique species of 122 total.
+SpeciesLabel max molecule threshold set to 0.
+  (all species will be labeled with the Auto method)
+CPU TIME: simulate_nf 404.77 s.
+Finished processing file gamma2phos.bngl.
+CPU TIME: total 405.04 s.

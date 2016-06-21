@@ -1,0 +1,11 @@
+# nfsim generated species list for system: 'gam2de'
+# warning! this feature is not yet fully tested! 
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~0,Y2~0).Lyn(U,SH2!3).Lyn(U,SH2!4)  2
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~0,Y2~P).Lyn(U,SH2!3).Lyn(U,SH2!4)  2
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~P,Y2~P).Lyn(U,SH2!3).Lyn(U,SH2!4)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~P!4,Y2~0).Rec(a!2,b~pY!5,Y1~0,Y2~0).Lyn(U,SH2!3).Syk(nSH2,cSH2!4,l~pY,a~Y).Lyn(U,SH2!5)  1
+Lig(l,l)  30051
+Lyn(U!1,SH2).Rec(a,b~Y!1,Y1~0,Y2~0)  5
+Lyn(U,SH2)  193
+Rec(a,b~Y,Y1~0,Y2~0)  7
+Syk(nSH2,cSH2,l~Y,a~Y)  1

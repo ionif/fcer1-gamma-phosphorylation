@@ -277,4 +277,4 @@ begin reaction rules
 end reaction rules
 end model
 
-simulate_nf({t_end=>1200, n_steps=>100, gml => 200000000})
+simulate_nf({t_end=>360, n_steps=>6, gml => 200000000})

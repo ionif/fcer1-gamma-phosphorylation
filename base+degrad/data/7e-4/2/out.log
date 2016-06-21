@@ -1,0 +1,50 @@
+BioNetGen version 2.2.6
+Reading from file gam2de.bngl (level 0)
+Read 38 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 9 observable(s).
+Read 66 reaction rule(s).
+ACTION: simulate_nf( )
+Wrote model in xml format to /home/alex/work/alex/data/2/gam2de.xml.
+Running NFsim on hop0.usrc.newmexicoconsortium.org
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/2/gam2de.xml -o /home/alex/work/alex/data/2/gam2de.gdat -sim 360 -oSteps 6 -ss /home/alex/work/alex/data/2/gam2de.species -cb -gml 200000000
+[simulation PID is: 11800]
+starting NFsim v1.11...
+
+reading xml file (/home/alex/work/alex/data/2/gam2de.xml)  
+	[-------]
+preparing simulation...
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 3.600000e+02 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 5.900000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 1.001291e+01s	 events (step): 440832
+Sim time: 1.200000e+02	CPU time (total): 2.039423e+01s	 events (step): 399258
+Sim time: 1.800000e+02	CPU time (total): 3.001396e+01s	 events (step): 347726
+Sim time: 2.400000e+02	CPU time (total): 3.543463e+01s	 events (step): 314153
+Sim time: 3.000000e+02	CPU time (total): 4.021136e+01s	 events (step): 289482
+Sim time: 3.600000e+02	CPU time (total): 4.469292e+01s	 events (step): 263683
+
+   You just simulated 2055135 reactions in 4.469295e+01s
+   ( 4.598343e+04 reactions/sec, 2.174696e-05 CPU seconds/event )
+   Null events: 0   (2.174696e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+done.  Total CPU time: 44.8249s
+
+SpeciesLabel max molecule threshold set to 20.
+WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
+readNFspecies::Reading from file /home/alex/work/alex/data/2/gam2de.species
+Read 19 unique species of 26 total.
+SpeciesLabel max molecule threshold set to 0.
+  (all species will be labeled with the Auto method)
+CPU TIME: simulate_nf 44.91 s.
+Finished processing file gam2de.bngl.
+CPU TIME: total 45.17 s.
