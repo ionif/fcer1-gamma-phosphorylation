@@ -1,0 +1,50 @@
+BioNetGen version 2.2.6
+Reading from file base.bngl (level 0)
+Read 37 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 9 observable(s).
+Read 65 reaction rule(s).
+ACTION: simulate_nf( )
+Wrote model in xml format to /home/alex/work/alex/data/3/base.xml.
+Running NFsim on hop0.usrc.newmexicoconsortium.org
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/3/base.xml -o /home/alex/work/alex/data/3/base.gdat -sim 360 -oSteps 6 -ss /home/alex/work/alex/data/3/base.species -gml 200000000 -cb
+[simulation PID is: 11900]
+starting NFsim v1.11...
+
+reading xml file (/home/alex/work/alex/data/3/base.xml)  
+	[-------]
+preparing simulation...
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 3.600000e+02 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 4.800000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 9.818274e+00s	 events (step): 452525
+Sim time: 1.200000e+02	CPU time (total): 2.114932e+01s	 events (step): 435936
+Sim time: 1.800000e+02	CPU time (total): 3.261858e+01s	 events (step): 401950
+Sim time: 2.400000e+02	CPU time (total): 4.066695e+01s	 events (step): 381034
+Sim time: 3.000000e+02	CPU time (total): 4.668796e+01s	 events (step): 369948
+Sim time: 3.600000e+02	CPU time (total): 5.289173e+01s	 events (step): 368710
+
+   You just simulated 2410104 reactions in 5.289177e+01s
+   ( 4.556671e+04 reactions/sec, 2.194585e-05 CPU seconds/event )
+   Null events: 0   (2.194585e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+done.  Total CPU time: 53.0295s
+
+SpeciesLabel max molecule threshold set to 20.
+WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
+readNFspecies::Reading from file /home/alex/work/alex/data/3/base.species
+Read 31 unique species of 42 total.
+SpeciesLabel max molecule threshold set to 0.
+  (all species will be labeled with the Auto method)
+CPU TIME: simulate_nf 53.13 s.
+Finished processing file base.bngl.
+CPU TIME: total 53.39 s.
