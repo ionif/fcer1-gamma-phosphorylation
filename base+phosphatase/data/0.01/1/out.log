@@ -8,8 +8,8 @@ Read 67 reaction rule(s).
 ACTION: simulate_nf( )
 Wrote model in xml format to /home/alex/work/alex/data/1/gamma2phos.xml.
 Running NFsim on hop0.usrc.newmexicoconsortium.org
-full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/1/gamma2phos.xml -o /home/alex/work/alex/data/1/gamma2phos.gdat -sim 360 -oSteps 6 -ss /home/alex/work/alex/data/1/gamma2phos.species -cb -gml 200000000
-[simulation PID is: 7331]
+full command: /home/alex/work/BioNetGen-2.2.6-stable/bin/NFsim -xml /home/alex/work/alex/data/1/gamma2phos.xml -o /home/alex/work/alex/data/1/gamma2phos.gdat -sim 360 -oSteps 6 -gml 200000000 -ss /home/alex/work/alex/data/1/gamma2phos.species -cb
+[simulation PID is: 11162]
 starting NFsim v1.11...
 
 reading xml file (/home/alex/work/alex/data/1/gamma2phos.xml)  
@@ -22,29 +22,29 @@ Equilibrating for :0s.  Please wait.
 
 simulating system for: 3.600000e+02 second(s).
 
-Sim time: 0.000000e+00	CPU time (total): 5.900000e-05s	 events (step): 0
-Sim time: 6.000000e+01	CPU time (total): 5.445743e+01s	 events (step): 4302497
-Sim time: 1.200000e+02	CPU time (total): 1.196857e+02s	 events (step): 4185252
-Sim time: 1.800000e+02	CPU time (total): 1.855046e+02s	 events (step): 3894331
-Sim time: 2.400000e+02	CPU time (total): 2.527772e+02s	 events (step): 3723914
-Sim time: 3.000000e+02	CPU time (total): 3.212470e+02s	 events (step): 3627670
-Sim time: 3.600000e+02	CPU time (total): 3.908857e+02s	 events (step): 3556877
+Sim time: 0.000000e+00	CPU time (total): 6.000000e-05s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 1.058919e+02s	 events (step): 4321910
+Sim time: 1.200000e+02	CPU time (total): 2.316905e+02s	 events (step): 4144988
+Sim time: 1.800000e+02	CPU time (total): 3.582866e+02s	 events (step): 3871867
+Sim time: 2.400000e+02	CPU time (total): 4.439350e+02s	 events (step): 3718848
+Sim time: 3.000000e+02	CPU time (total): 5.086808e+02s	 events (step): 3616702
+Sim time: 3.600000e+02	CPU time (total): 5.753340e+02s	 events (step): 3587627
 
-   You just simulated 23290542 reactions in 3.908857e+02s
-   ( 5.958402e+04 reactions/sec, 1.678302e-05 CPU seconds/event )
-   Null events: 0   (1.678302e-05 CPU seconds/non-null event )
+   You just simulated 23261943 reactions in 5.753341e+02s
+   ( 4.043206e+04 reactions/sec, 2.473285e-05 CPU seconds/event )
+   Null events: 0   (2.473285e-05 CPU seconds/non-null event )
 
 
 saving list of final molecular species...
 
-done.  Total CPU time: 392.249s
+done.  Total CPU time: 577.077s
 
 SpeciesLabel max molecule threshold set to 20.
 WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
 readNFspecies::Reading from file /home/alex/work/alex/data/1/gamma2phos.species
-Read 102 unique species of 145 total.
+Read 100 unique species of 143 total.
 SpeciesLabel max molecule threshold set to 0.
   (all species will be labeled with the Auto method)
-CPU TIME: simulate_nf 392.54 s.
+CPU TIME: simulate_nf 577.40 s.
 Finished processing file gamma2phos.bngl.
-CPU TIME: total 392.80 s.
+CPU TIME: total 577.87 s.
