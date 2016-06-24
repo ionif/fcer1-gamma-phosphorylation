@@ -1,0 +1,438 @@
+#!/bin/bash
+#
+# Version 1.1
+# Written by Joshua Colvin
+# jcolvin@tgen.org
+#
+# Function used to log every command that is executed.
+# Takes two or three arguments:
+#  - Directory command should be executed in.
+#  - Command to execute.
+#
+#    Note that it is important to surround entire command with quotes
+#    so that pipes and redirects are handled properly.
+#
+#  - If optional third argument is present, it contains the name of the file
+#    to create if the program fails.
+#    (make sure file doesn't exist before running)
+#
+# Example:
+# echo_and_exec $PBS_O_WORKDIR "wc -l *.fastq > fastq_line_count.txt"
+#
+#
+echo_and_exec()
+{
+  cd $1
+  echo ""
+  echo "In $1"
+  echo "Running: $2"
+  if [ ! "$test" ]
+  then
+   eval "$2"
+  fi
+  status=$?
+
+  if [ ! $status == 0 ]
+  then
+    if [ "$3" ]
+    then
+      touch $3
+    fi
+    echo "Previous command returned error: $status"
+    exit 1;
+  fi
+}
+
+# Same but fork process so it runs in the background.
+echo_and_exec_fork()
+{
+  cd $1
+  
+  cmd=${2//%%%/$1}
+  
+  echo ""
+  echo "In $1"
+  echo "Running: $cmd"
+  eval "$cmd" &
+  status=$?
+
+  if [ ! $status == 0 ]
+  then
+    if [ "$3" ]
+    then
+      eval $3
+    fi
+    echo "Previous command returned error: $status"
+    exit 1;
+  fi
+}
+
+# List of variable names that are required to continue
+# (names only, do not include '$')
+#
+# Example:
+# require_var foo bar
+#
+require_var()
+{
+  for var in $*
+  do
+    eval if [ ! "\"\$$var\"" ]\; then echo "Oops, need variable $var\!"\; failed=1\; fi\;
+  done
+
+  if [ "$failed" ]
+  then
+    exit 1;
+  fi
+
+}
+
+if [ ! $PBS_O_WORKDIR ]
+then
+  # Called from command line, not in PBS.
+  PBS_O_WORKDIR="$PWD"
+fi
+
+if [ $SGE_O_WORKDIR ]
+then
+	PBS_O_WORKDIR="$SGE_O_WORKDIR"
+fi
+
+cd ${PBS_O_WORKDIR}
+
+if [ -n "$command" ];
+then
+  echo_and_exec "$PBS_O_WORKDIR" "$command" "$touch_on_error"
+fi
+
+if [ -n "$command0" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command0" "$touch_on_error0"
+fi
+
+if [ -n "$command1" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command1" "$touch_on_error1"
+fi
+
+if [ -n "$command2" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command2" "$touch_on_error2"
+fi
+
+if [ -n "$command3" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command3" "$touch_on_error3"
+fi
+
+if [ -n "$command4" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command4" "$touch_on_error4"
+fi
+
+if [ -n "$command5" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command5" "$touch_on_error5"
+fi
+
+if [ -n "$command6" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command6" "$touch_on_error6"
+fi
+
+if [ -n "$command7" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command7" "$touch_on_error7"
+fi
+
+if [ -n "$command8" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command8" "$touch_on_error8"
+fi
+
+if [ -n "$command9" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command9" "$touch_on_error9"
+fi
+
+if [ -n "$command10" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command10" "$touch_on_error10"
+fi
+
+if [ -n "$command11" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command11" "$touch_on_error11"
+fi
+
+if [ -n "$command12" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command12" "$touch_on_error12"
+fi
+
+if [ -n "$command13" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command13" "$touch_on_error13"
+fi
+
+if [ -n "$command14" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command14" "$touch_on_error14"
+fi
+
+if [ -n "$command15" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command15" "$touch_on_error15"
+fi
+
+if [ -n "$command16" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command16" "$touch_on_error16"
+fi
+
+if [ -n "$command17" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command17" "$touch_on_error17"
+fi
+
+if [ -n "$command18" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command18" "$touch_on_error18"
+fi
+
+if [ -n "$command19" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command19" "$touch_on_error19"
+fi
+
+if [ -n "$command20" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command20" "$touch_on_error20"
+fi
+
+if [ -n "$command21" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command21" "$touch_on_error21"
+fi
+
+if [ -n "$command22" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command22" "$touch_on_error22"
+fi
+
+if [ -n "$command23" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command23" "$touch_on_error23"
+fi
+
+if [ -n "$command24" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command24" "$touch_on_error24"
+fi
+
+if [ -n "$command25" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command25" "$touch_on_error25"
+fi
+
+if [ -n "$command26" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command26" "$touch_on_error26"
+fi
+
+if [ -n "$command27" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command27" "$touch_on_error27"
+fi
+
+if [ -n "$command28" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command28" "$touch_on_error28"
+fi
+
+if [ -n "$command29" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command29" "$touch_on_error29"
+fi
+
+if [ -n "$command30" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command30" "$touch_on_error30"
+fi
+
+if [ -n "$command31" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command31" "$touch_on_error31"
+fi
+
+if [ -n "$command32" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command32" "$touch_on_error32"
+fi
+
+if [ -n "$command33" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command33" "$touch_on_error33"
+fi
+
+if [ -n "$command34" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command34" "$touch_on_error34"
+fi
+
+if [ -n "$command35" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command35" "$touch_on_error35"
+fi
+
+if [ -n "$command36" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command36" "$touch_on_error36"
+fi
+
+if [ -n "$command37" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command37" "$touch_on_error37"
+fi
+
+if [ -n "$command38" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command38" "$touch_on_error38"
+fi
+
+if [ -n "$command39" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command39" "$touch_on_error39"
+fi
+
+if [ -n "$command40" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command40" "$touch_on_error40"
+fi
+
+if [ -n "$command41" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command41" "$touch_on_error41"
+fi
+
+if [ -n "$command42" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command42" "$touch_on_error42"
+fi
+
+if [ -n "$command43" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command43" "$touch_on_error43"
+fi
+
+if [ -n "$command44" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command44" "$touch_on_error44"
+fi
+
+if [ -n "$command45" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command45" "$touch_on_error45"
+fi
+
+if [ -n "$command46" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command46" "$touch_on_error46"
+fi
+
+if [ -n "$command47" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command47" "$touch_on_error47"
+fi
+
+if [ -n "$command48" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command48" "$touch_on_error48"
+fi
+
+if [ -n "$command49" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command49" "$touch_on_error49"
+fi
+
+if [ -n "$command50" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command50" "$touch_on_error50"
+fi
+
+if [ -n "$command51" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command51" "$touch_on_error51"
+fi
+
+if [ -n "$command52" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command52" "$touch_on_error52"
+fi
+
+if [ -n "$command53" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command53" "$touch_on_error53"
+fi
+
+if [ -n "$command54" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command54" "$touch_on_error54"
+fi
+
+if [ -n "$command55" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command55" "$touch_on_error55"
+fi
+
+if [ -n "$command56" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command56" "$touch_on_error56"
+fi
+
+if [ -n "$command57" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command57" "$touch_on_error57"
+fi
+
+if [ -n "$command58" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command58" "$touch_on_error58"
+fi
+
+if [ -n "$command59" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command59" "$touch_on_error59"
+fi
+
+if [ -n "$command60" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command60" "$touch_on_error60"
+fi
+
+if [ -n "$command61" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command61" "$touch_on_error61"
+fi
+
+if [ -n "$command62" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command62" "$touch_on_error62"
+fi
+
+if [ -n "$command63" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command63" "$touch_on_error63"
+fi
+
+if [ -n "$command64" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command64" "$touch_on_error64"
+fi
+
+if [ -n "$command65" ];
+then
+  echo_and_exec_fork "$PBS_O_WORKDIR" "$command65" "$touch_on_error65"
+fi
+
+wait

@@ -1,0 +1,106 @@
+[validate isingspin_energy]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.bngl
+[child process ID is: 7752]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.bngl (level 0)
+SpeciesLabel method set to HNauty.
+Read 4 parameters.
+Read 1 molecule types.
+Read 1 species.
+Read 5 energy patterns(s).
+Read 5 observable(s).
+Read 1 reaction rule(s).
+ACTION: generate_network( isingspin_energy )
+Iteration   0:     1 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     2 species      1 rxns  1.20e-01 CPU s
+Iteration   2:     6 species      6 rxns  1.90e-01 CPU s
+Iteration   3:    18 species     38 rxns  6.20e-01 CPU s
+Iteration   4:    32 species    122 rxns  1.66e+00 CPU s
+Iteration   5:    46 species    240 rxns  1.94e+00 CPU s
+Iteration   6:    58 species    358 rxns  1.93e+00 CPU s
+Iteration   7:    62 species    442 rxns  1.57e+00 CPU s
+Iteration   8:    63 species    474 rxns  5.40e-01 CPU s
+Iteration   9:    64 species    479 rxns  1.60e-01 CPU s
+Iteration  10:    64 species    480 rxns  1.20e-01 CPU s
+Cumulative CPU time for each rule
+Rule   1:   480 reactions 8.85e+00 CPU s 1.84e-02 CPU s/rxn
+Total   :   480 reactions 8.85e+00 CPU s 1.84e-02 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net.
+CPU TIME: generate_network 8.89 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin -p ssa -h 1399753705 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.net 10000 10
+[simulation PID is: 7760]
+run_network 3.0
+Read 22 parameters
+Read 64 species
+Read 5 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.net
+Read 0 function(s)
+Read 480 reaction(s)
+480 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 16.37
+Initialization took 0.00 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 205968          
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.gdat.
+Propagation took 1.00e-01 CPU seconds
+Program times:  0.10 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_burnin.cdat
+CPU TIME: simulate_ssa 0.13 s.
+Saved current species concentrations with label "DEFAULT"
+CPU TIME: saveConcentrations 0.00 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil -p ssa -h 1036961110 --cdat 0 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.net 1000 5000
+[simulation PID is: 7762]
+run_network 3.0
+Suppressing concentrations (.cdat) output
+Read 22 parameters
+Read 64 species
+Read 5 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.net
+Read 0 function(s)
+Read 480 reaction(s)
+480 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 16.37
+Initialization took 0.01 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 10300571        
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.gdat.
+Propagation took 5.49e+00 CPU seconds
+Program times:  5.50 CPU s 6.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy_ssa_equil.cdat
+CPU TIME: simulate_ssa 5.56 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.bngl.
+CPU TIME: total 14.63 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net
+[child process ID is: 7765]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net
+[child process ID is: 7766]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isingspin_energy.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/isingspin_energy.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking SSA equilibrium distribution
+-------------------------------------------------------------------------------
+isingspin_energy passed all validation tests.

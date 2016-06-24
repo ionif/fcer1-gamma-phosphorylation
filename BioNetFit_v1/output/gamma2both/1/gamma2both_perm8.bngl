@@ -1,0 +1,309 @@
+# catp__FREE__ changed to 8.3346508358302
+# de__FREE__ changed to 0.000352733443262596
+# End of permute change log
+## fceri_gamma2.bngl
+## FceRI receptor activation model
+##
+## Original rule-based FceRI model was published in:
+##   JR Faeder, et al.
+##   "Investigation of early events in Fc epsilon RI-mediated signaling
+##     using a detailed mathematical model".
+##   J. Immunol. 170, 3769–3781 (2003).
+##
+## "Gamma2" variant appeared in:
+##    MW Sneddon, JR Faeder, and T Emonet.
+##    "Efficient modeling, simulation and coarse-graining of biological complexity with NFsim".
+##    Nature Methods 8, 177–183 (2011).
+begin model
+begin parameters
+catp__FREE__ 8.3346508358302
+de__FREE__ 0.000352733443262596
+    # constants
+    NA    6.0221e23  # Avogadro's number
+    PI    3.1415927  # Pi
+    # experimental conditions (Goldstein, et al. 2004)
+    vol_cell 	  1e-12      # volume of cytoplasm, L, 1e-12
+
+    cell_density  2e8        # cells density, /L
+    Rec_cell      4e5        # Receptors per cell: 4e5
+    Lyn_cell      3e4        # Lyn molecules per cell: 3e4
+    Syk_cell      4e5        # Syk molecules per cell: 4e5
+    Lig_conc      10e-9      # initial ligand concentration, M
+
+    # simulation scale
+    f         1e-1                              # fraction of simulated cell     
+    Vec       (1/cell_density)*f                # reactor volume, extracellular
+    Vcp       vol_cell*f                        # reactor volume, cytoplasm 
+
+    Lig_tot    Lig_conc*NA*Vec 
+    Rec_tot    Rec_cell*f        
+    Lyn_tot    Lyn_cell*f
+    Syk_tot    Syk_cell*f
+    P_tot      Lyn_tot/1.4 #estimation for phosphatase
+
+    kp1   8e4/NA/Vec        # 8e4 /M/s
+    km1   0                 # 0 /s
+    kp2   1.51e8/NA/Vcp     # 1.51e8 /M/s (surface reaction. since SA scales with Vcp, this is ok.)
+    km2   0                 # 0 /s
+    kpL   3.01e7/NA/Vcp     # 3.01e7 /M/s
+    kmL   20.               # 20. /s
+    kpLs  3.01e7/NA/Vcp     # 3.01e7 /M/s
+    kmLs  0.12              # 0.12 /s
+    kpS   3.61e7/NA/Vcp     # 3.61e7 /M/s
+    kmS   0.13              # /s
+    kpSs  6e-2              # /s
+    kmSs  0.13              # ...
+    pLb   30
+    pLbs  100
+    pLg   1
+    pLgs  3
+    pLS   30
+    pLSs  100
+    pSS   100
+    pSSs  200 
+    dm    20
+    dc    20
+
+
+    #FREE variables
+    #receptor degradation rate
+    de de__FREE__ #e-1, e-2, e-3, e-4, -5
+    #catalytic rate
+    catp catp__FREE__ #0.01 - 10
+    
+end parameters
+begin molecule types
+    Lig(l,l)
+    Lyn(U,SH2)
+    Syk(nSH2,cSH2,l~Y~pY,a~Y~pY)
+    Rec(a,b~Y~pY,Y1~0~P,Y2~0~P)
+    P(SH2)
+end molecule types
+begin species
+    Lig(l,l)                 Lig_tot 
+    Lyn(U,SH2)               Rec_tot
+    Syk(nSH2,cSH2,l~Y,a~Y)   Lyn_tot
+    Rec(a,b~Y,Y1~0,Y2~0)     Syk_tot
+    P(SH2)                   P_tot
+end species
+begin observables
+    Molecules  LynFree    Lyn(U,SH2)
+    Molecules  RecMon     Rec(a) Rec(a!1).Lig(l!1,l)
+    Molecules  RecDim     Rec(a!0).Lig(l!0,l!1).Rec(a!1)
+    Molecules  RecPbeta   Rec(b~pY!?)
+    Molecules  GammaY1    Rec(Y1~P!?)
+   # Molecules  RecSyk     Rec(g~pY!1).Syk(tSH2!1)
+  #  Molecules  RecSykPS   Rec(g~pY!1).Syk(tSH2!1,a~pY)
+    Molecules  SykTest    Syk()
+    Molecules  LynTest    Lyn()
+    Molecules  RecTest    Rec()
+    Molecules  LigTest    Lig()
+end observables
+
+begin functions
+    PRC_Y1() = GammaY1/Rec_tot
+end functions
+
+begin reaction rules
+    # Ligand-receptor binding      
+    Rec(a) + Lig(l,l) <-> Rec(a!1).Lig(l!1,l)  kp1, km1
+
+    # Receptor-aggregation
+    Rec(a) + Lig(l,l!+) <-> Rec(a!1).Lig(l!1,l!+)  kp2,km2
+
+    # Constitutive Lyn-receptor binding
+    Rec(b~Y) + Lyn(U,SH2) <-> Rec(b~Y!1).Lyn(U!1,SH2)  kpL, kmL
+
+    # Transphosphorylation of beta by constitutive Lyn
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,b~Y) -> Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,b~pY)  pLb
+
+    # Transphosphorylation of gamma by constitutive Lyn
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1) -> Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1~P)  pLg
+
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2) -> Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2~P)  pLg
+
+    # Lyn-receptor binding through SH2 domain
+    Rec(b~pY) + Lyn(U,SH2) <-> Rec(b~pY!1).Lyn(U,SH2!1)  kpLs, kmLs
+
+    # Transphosphorylation of beta by SH2-bound Lyn
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,b~Y) -> Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,b~pY)  pLbs
+
+    # Transphosphorylation of gamma by SH2-bound Lyn
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1) -> Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1~P)  pLgs
+   
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2) -> Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2~P)  pLgs	
+
+    # Syk-receptor binding through tSH2 domain
+    Syk(nSH2,cSH2)+Rec(Y2~P)<->Syk(nSH2!1,cSH2).Rec(Y2~P!1) kpS, kmS
+    
+    Syk(nSH2!1,cSH2).Rec(Y2~P!1,Y1~P)<-> \
+    Syk(nSH2!1,cSH2!2).Rec(Y2~P!1,Y1~P!2) kpS*10, kmS
+
+    Syk(nSH2,cSH2)+Rec(Y1~P)<->Syk(nSH2,cSH2!1).Rec(Y1~P!1) kpS, kmS
+    
+    Syk(nSH2,cSH2!1).Rec(Y2~P,Y1~P!1)<->Syk(nSH2!2,cSH2!1).Rec(Y2~P!2,Y1~P!1) kpS*10, kmS
+
+
+    # Transphosphorylation of Syk by constitutive Lyn
+    #first tyrosine
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,l~pY)  pLS
+
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,l~pY)  pLS
+    #second tyrosine
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,l~pY)  pLS
+
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U!3,SH2).Rec(a!2,b~Y!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,l~pY)  pLS
+
+    # Transphosphorylation of Syk by SH2-bound Lyn
+    #first tyrosine
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,l~pY)  pLSs
+
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,l~pY)  pLSs
+    #second tyrosine
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,l~pY)  pLSs
+
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,l~Y) -> \
+    Lig(l!1,l!2).Lyn(U,SH2!3).Rec(a!2,b~pY!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,l~pY)  pLSs
+
+    # Transphosphorylation of Syk by Syk not phosphorylated on aloop
+    #nSH2,nSH2
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSS
+    #nSH2,cSH2
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSS
+    #cSH2,nSH2
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSS
+    #cSH2,cSH2
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~Y).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSS
+
+    # Transphosphorylation of Syk by Syk phosphorylated on aloop
+    #nSH2,nSH2
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSSs
+    
+    #nSH2,cSH2
+    
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(nSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSSs
+    #cSH2,nSH2
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(nSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(nSH2!4,a~pY)  pSSs
+    #cSH2,cSH2
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y1~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y2~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~Y) -> \
+    Lig(l!1,l!2).Syk(cSH2!3,a~pY).Rec(a!2,Y2~P!3).Rec(a!1,Y1~P!4).Syk(cSH2!4,a~pY)  pSSs
+
+    # Dephosphorylation of Rec beta
+    Rec(b~pY)-> Rec(b~Y)  dm
+
+    # Dephosphorylation of Rec gamma
+    Rec(Y1~P)-> Rec(Y1~0)  dm
+    Rec(Y2~P)-> Rec(Y2~0)  dm
+
+    # Dephosphorylation of Syk at membrane
+    #nSH2
+    Syk(nSH2!+,l~pY)-> Syk(nSH2!+,l~Y)  dm
+    Syk(nSH2!+,a~pY)-> Syk(nSH2!+,a~Y)  dm
+    #cSH2
+    Syk(cSH2!+,l~pY)-> Syk(cSH2!+,l~Y)  dm
+    Syk(cSH2!+,a~pY)-> Syk(cSH2!+,a~Y)  dm
+
+    # Dephosphorylation of Syk in cytosol
+    #nSH2
+    Syk(nSH2,l~pY)-> Syk(nSH2,l~Y)  dc
+    Syk(nSH2,a~pY)-> Syk(nSH2,a~Y)  dc
+    #cSH2
+    Syk(cSH2,l~pY)-> Syk(cSH2,l~Y)  dc
+    Syk(cSH2,a~pY)-> Syk(cSH2,a~Y)  dc
+
+    #receptor degradation/endocytosis
+    Rec() -> 0 de  
+
+    #Dephosphorylation of tyrosines by phosphatase
+    P(SH2) + Rec(Y1~P) <-> P(SH2!1).Rec(Y1~P!1) kpS, kmS
+    P(SH2!1).Rec(Y1~P!1) -> P(SH2) + Rec(Y1~0) catp
+end reaction rules
+end model
+
+simulate_nf({t_end=>300,n_steps=>5,suffix=>"gamma",gml=>200000000,print_functions=>1})

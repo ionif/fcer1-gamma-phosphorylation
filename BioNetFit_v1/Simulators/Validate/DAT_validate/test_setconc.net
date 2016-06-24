@@ -1,0 +1,24 @@
+# Created by BioNetGen 2.2.6
+begin parameters
+    1 NA             6.0221e23  # Constant
+    2 V              1e-9  # Constant
+    3 L0             1e-9  # Constant
+    4 R0             1e-9  # Constant
+    5 kp             (1e6/NA)/V  # ConstantExpression 1.66055030637153e-009
+    6 km             0.1  # Constant
+    7 _InitialConc1  (L0*NA)*V  # ConstantExpression 602210
+    8 _InitialConc2  (R0*NA)*V  # ConstantExpression 602210
+    9 NewConc1       (2e-9*NA)*V  # ConstantExpression 1204420
+end parameters
+begin species
+    1 L(r) 5.963056327490e+05
+    2 R(l) 5.963056327490e+05
+    3 L(r!1).R(l!1) 5.904367251040e+03
+end species
+begin reactions
+    1 1,2 3 kp #R1
+    2 3 1,2 km #R1_r
+end reactions
+begin groups
+    1 LR                   3
+end groups

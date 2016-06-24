@@ -1,0 +1,89 @@
+[validate gene_expr_func]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func.bngl
+[child process ID is: 7725]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func.bngl (level 0)
+Read 11 parameters.
+Read 5 molecule types.
+Read 5 species.
+Read 4 observable(s).
+Read 2 functions.
+Read 5 reaction rule(s).
+ACTION: generate_network( gene_expr_func )
+Iteration   0:     5 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     6 species      5 rxns  0.00e+00 CPU s
+Iteration   2:     6 species      6 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   3:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   4:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   5:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :     6 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func.net.
+CPU TIME: generate_network 0.00 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin -p ssa -h 1595320449 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.net 10000000 1
+[simulation PID is: 7727]
+run_network 3.0
+Read 11 parameters
+$Null() is a fixed (boundaryCondition) variable
+Read 6 species
+Read 4 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.net
+Read 2 function(s)
+Read 6 reaction(s)
+6 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 2.00
+Initialization took 0.00 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 336342          
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.gdat.
+Propagation took 5.00e-02 CPU seconds
+Program times:  0.05 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_burnin.cdat
+CPU TIME: simulate_ssa 0.06 s.
+Saved current species concentrations with label "DEFAULT"
+CPU TIME: saveConcentrations 0.00 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil -p ssa -h 2059210455 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.net 20000 2500
+[simulation PID is: 7729]
+run_network 3.0
+Read 11 parameters
+$Null() is a fixed (boundaryCondition) variable
+Read 6 species
+Read 4 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.net
+Read 2 function(s)
+Read 6 reaction(s)
+6 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 2.00
+Initialization took 0.00 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 1664478         
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.gdat.
+Propagation took 2.40e-01 CPU seconds
+Program times:  0.24 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func_ssa_equil.cdat
+CPU TIME: simulate_ssa 0.25 s.
+Reset species concentrations to "DEFAULT" saved values.
+CPU TIME: resetConcentrations 0.00 s.
+ACTION: simulate_nf( )
+WARNING: simulate_nf(): skipping simulation, 'no-nfsim' flag is true.
+CPU TIME: simulate_nf 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/gene_expr_func.bngl.
+CPU TIME: total 0.32 s.
+-------------------------------------------------------------------------------
+ -> checking SSA equilibrium distribution
+-------------------------------------------------------------------------------
+gene_expr_func passed all validation tests.

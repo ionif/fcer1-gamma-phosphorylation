@@ -1,0 +1,51 @@
+[validate test_paramname]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.bngl
+[child process ID is: 7880]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.bngl (level 0)
+Read 4 parameters.
+Read 2 species.
+Read 1 reaction rule(s).
+ACTION: generate_network( test_paramname )
+Iteration   0:     2 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     3 species      1 rxns  1.00e-02 CPU s
+Iteration   2:     3 species      2 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Total   :     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net.
+CPU TIME: generate_network 0.01 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net 0.4 10
+[simulation PID is: 7882]
+run_network 3.0
+Read 5 parameters
+Read 3 species
+Read 0 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.net
+Read 0 function(s)
+Read 2 reaction(s)
+2 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.cdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.cdat
+CPU TIME: simulate_ode 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.bngl.
+CPU TIME: total 0.01 s.
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/test_paramname.cdat
+[child process ID is: 7883]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/test_paramname.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/test_paramname.cdat
+PASSED!!  norm error (1.926378E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+test_paramname passed all validation tests.

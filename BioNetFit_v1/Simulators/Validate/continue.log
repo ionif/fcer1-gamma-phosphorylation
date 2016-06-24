@@ -1,0 +1,109 @@
+[validate continue]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.bngl
+[child process ID is: 7683]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.bngl (level 0)
+Read 4 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 6 observable(s).
+Read 3 reaction rule(s).
+ACTION: generate_network( continue )
+Iteration   0:     4 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     5 species      3 rxns  0.00e+00 CPU s
+Iteration   2:     5 species      4 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   3:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :     4 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net.
+CPU TIME: generate_network 0.01 s.
+Set concentration of species A() to value 1
+CPU TIME: setConcentration 0.00 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net 0.5 20
+[simulation PID is: 7685]
+run_network 3.0
+Read 4 parameters
+$Trash() is a fixed (boundaryCondition) variable
+Read 5 species
+Read 6 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net
+Read 0 function(s)
+Read 4 reaction(s)
+4 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat
+CPU TIME: simulate_ode 0.00 s.
+Set concentration of species A() to value 0
+CPU TIME: setConcentration 0.00 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -x -i 10 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net 0.5 60
+[simulation PID is: 7687]
+run_network 3.0
+Read 4 parameters
+$Trash() is a fixed (boundaryCondition) variable
+Read 5 species
+Read 6 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net
+Read 0 function(s)
+Read 4 reaction(s)
+4 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat
+CPU TIME: simulate_ode 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.bngl.
+CPU TIME: total 0.01 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net
+[child process ID is: 7688]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net
+[child process ID is: 7689]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.cdat
+[child process ID is: 7690]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.cdat
+PASSED!!  norm error (8.848002E-16) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.gdat
+[child process ID is: 7691]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/continue.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/continue.gdat
+PASSED!!  norm error (1.072680E-09) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+continue passed all validation tests.

@@ -1,0 +1,41 @@
+[validate empty_compartments_block]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.bngl
+[child process ID is: 7707]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.bngl (level 0)
+Read 1 parameters.
+Read 1 molecule types.
+Read 1 species.
+Read 1 reaction rule(s).
+ACTION: generate_network( empty_compartments_block )
+Iteration   0:     1 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     1 species      1 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net.
+CPU TIME: generate_network 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.bngl.
+CPU TIME: total 0.00 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net
+[child process ID is: 7709]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net
+[child process ID is: 7710]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/empty_compartments_block.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/empty_compartments_block.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+empty_compartments_block passed all validation tests.

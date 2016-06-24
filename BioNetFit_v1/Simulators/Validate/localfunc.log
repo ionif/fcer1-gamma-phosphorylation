@@ -1,0 +1,96 @@
+[validate localfunc]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.bngl
+[child process ID is: 7791]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.bngl (level 0)
+Read 4 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 8 observable(s).
+Read 1 functions.
+Read 3 reaction rule(s).
+ACTION: generate_network( localfunc )
+Iteration   0:     4 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     5 species      3 rxns  1.00e-02 CPU s
+Iteration   2:     6 species      6 rxns  0.00e+00 CPU s
+Iteration   3:     7 species      9 rxns  0.00e+00 CPU s
+Iteration   4:     7 species     11 rxns  1.00e-02 CPU s
+Cumulative CPU time for each rule
+Rule   1:     4 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     6 reactions 2.00e-02 CPU s 3.33e-03 CPU s/rxn
+Rule   3:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :    11 reactions 2.00e-02 CPU s 1.82e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net.
+CPU TIME: generate_network 0.02 s.
+Wrote M-file script /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.m.
+CPU TIME: writeMfile 0.00 s.
+Wrote Mexfile /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc_mex_cvode.c and M-file script /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc_mex.m.
+CPU TIME: writeMexfile 0.00 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net 0.25 40
+[simulation PID is: 7794]
+run_network 3.0
+Read 8 parameters
+$Trash() is a fixed (boundaryCondition) variable
+Read 7 species
+Read 8 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net
+Read 0 function(s)
+Read 11 reaction(s)
+Removed 1 reactions with zero rate
+10 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.cdat
+CPU TIME: simulate_ode 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.bngl.
+CPU TIME: total 0.03 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net
+[child process ID is: 7795]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net
+[child process ID is: 7796]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking M-file generator
+-------------------------------------------------------------------------------
+ -> checking MEX/CVode generator
+-------------------------------------------------------------------------------
+ -> checking Mex/CVode companion M-file specification
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.cdat
+[child process ID is: 7797]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.cdat
+PASSED!!  norm error (3.364487E-15) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.gdat
+[child process ID is: 7798]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/localfunc.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/localfunc.gdat
+PASSED!!  norm error (2.631610E-15) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+localfunc passed all validation tests.

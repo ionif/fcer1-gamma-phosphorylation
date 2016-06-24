@@ -1,0 +1,85 @@
+[validate CaOscillate_Func]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.bngl
+[child process ID is: 7669]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.bngl (level 0)
+Read 17 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 4 observable(s).
+Read 8 reaction rule(s).
+ACTION: generate_network( CaOscillate_Func )
+Iteration   0:     4 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     4 species      8 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   3:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   4:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   5:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   6:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   7:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   8:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :     8 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net.
+CPU TIME: generate_network 0.01 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func -p cvode -a 1e-12 -r 1e-12 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net 0.1 500
+[simulation PID is: 7671]
+run_network 3.0
+Read 17 parameters
+Read 4 species
+Read 4 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net
+Read 4 function(s)
+Read 8 reaction(s)
+8 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.gdat.
+Propagation took 2.00e-02 CPU seconds
+Program times:  0.02 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.cdat
+CPU TIME: simulate_ode 0.02 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.bngl.
+CPU TIME: total 0.04 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net
+[child process ID is: 7672]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net
+[child process ID is: 7673]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.cdat
+[child process ID is: 7674]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.cdat
+PASSED!!  norm error (1.006128E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.gdat
+[child process ID is: 7675]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/CaOscillate_Func.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/CaOscillate_Func.gdat
+PASSED!!  norm error (4.771032E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+CaOscillate_Func passed all validation tests.

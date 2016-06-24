@@ -1,0 +1,100 @@
+[validate Repressilator]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.bngl
+[child process ID is: 7843]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.bngl (level 0)
+Read 13 parameters.
+Read 10 molecule types.
+Read 10 species.
+Read 4 observable(s).
+Read 21 reaction rule(s).
+ACTION: generate_network( Repressilator )
+Iteration   0:    10 species      0 rxns  0.00e+00 CPU s
+Iteration   1:    13 species     15 rxns  1.00e-02 CPU s
+Iteration   2:    16 species     24 rxns  1.00e-02 CPU s
+Iteration   3:    16 species     30 rxns  1.00e-02 CPU s
+Cumulative CPU time for each rule
+Rule   1:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   2:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule   3:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   4:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   5:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   6:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   7:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   8:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   9:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule  10:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  11:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  12:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  13:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  14:     1 reactions 1.00e-02 CPU s 1.00e-02 CPU s/rxn
+Rule  15:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  16:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  17:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  18:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  19:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  20:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  21:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :    30 reactions 3.00e-02 CPU s 1.00e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net.
+CPU TIME: generate_network 0.03 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator -p cvode -a 1e-12 -r 1e-12 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net 100 400
+[simulation PID is: 7845]
+run_network 3.0
+Read 34 parameters
+Read 16 species
+Read 4 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net
+Read 0 function(s)
+Read 30 reaction(s)
+30 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.gdat.
+Propagation took 2.00e-02 CPU seconds
+Program times:  0.02 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.cdat
+CPU TIME: simulate_ode 0.02 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.bngl.
+CPU TIME: total 0.08 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net
+[child process ID is: 7846]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net
+[child process ID is: 7847]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.cdat
+[child process ID is: 7848]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.cdat
+PASSED!!  norm error (1.429835E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.gdat
+[child process ID is: 7849]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Repressilator.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Repressilator.gdat
+PASSED!!  norm error (1.565910E-09) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+Repressilator passed all validation tests.

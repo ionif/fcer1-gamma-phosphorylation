@@ -1,0 +1,30 @@
+[validate ANx]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/ANx.bngl
+[child process ID is: 7663]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/ANx.bngl (level 0)
+Read 27 parameters.
+Read 3 species.
+Adding 0 as allowed state of component m of molecule RD
+Adding 1 as allowed state of component m of molecule RD
+Adding 3 as allowed state of component m of molecule RD
+Adding 4 as allowed state of component m of molecule RD
+Adding 5 as allowed state of component m of molecule RD
+Adding 6 as allowed state of component m of molecule RD
+Adding 7 as allowed state of component m of molecule RD
+Adding 8 as allowed state of component m of molecule RD
+Read 12 observable(s).
+Read 2 functions.
+Adding PLUS as allowed state of component m of molecule RD
+Adding MINUS as allowed state of component m of molecule RD
+Read 16 reaction rule(s).
+Wrote model in xml format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/ANx.xml.
+CPU TIME: writeXML 0.01 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/ANx.bngl.
+CPU TIME: total 0.04 s.
+-------------------------------------------------------------------------------
+ -> checking XML specification
+-------------------------------------------------------------------------------
+ANx passed all validation tests.

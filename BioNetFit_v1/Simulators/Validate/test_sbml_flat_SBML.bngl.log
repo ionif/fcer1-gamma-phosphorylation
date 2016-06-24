@@ -1,0 +1,7 @@
+SIMULATION:CRITICAL.0: Boundary condition/assignment type variables (A) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.1: Boundary condition/assignment type variables (B) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.2: Boundary condition/assignment type variables (C) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.3: Boundary condition/assignment type variables (D) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.4: Boundary condition/assignment type variables (AA) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.5: Boundary condition/assignment type variables (dim_r) are not properly                     supported in BioNetGen simulator
+INFO:Summary.6: File contains 5 molecules out of 5 original SBML species

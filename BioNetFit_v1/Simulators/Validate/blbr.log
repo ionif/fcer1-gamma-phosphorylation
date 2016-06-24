@@ -1,0 +1,48 @@
+[validate blbr]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.bngl
+[child process ID is: 7664]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.bngl (level 0)
+SpeciesLabel method set to HNauty.
+Read 8 parameters.
+Read 2 species.
+Read 3 reaction rule(s).
+ACTION: generate_network( blbr )
+Iteration   0:     2 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     3 species      1 rxns  0.00e+00 CPU s
+Iteration   2:     7 species      6 rxns  1.00e-02 CPU s
+Iteration   3:    14 species     24 rxns  1.10e-01 CPU s
+Iteration   4:    19 species     71 rxns  5.90e-01 CPU s
+Iteration   5:    20 species     91 rxns  3.90e-01 CPU s
+Iteration   6:    20 species     92 rxns  7.00e-02 CPU s
+Cumulative CPU time for each rule
+Rule   1:    18 reactions 1.70e-01 CPU s 9.44e-03 CPU s/rxn
+Rule   2:    64 reactions 7.90e-01 CPU s 1.23e-02 CPU s/rxn
+Rule   3:    10 reactions 2.10e-01 CPU s 2.10e-02 CPU s/rxn
+Total   :    92 reactions 1.17e+00 CPU s 1.27e-02 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net.
+CPU TIME: generate_network 1.18 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.bngl.
+CPU TIME: total 1.19 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net
+[child process ID is: 7666]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net
+[child process ID is: 7667]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/blbr.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/blbr.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+blbr passed all validation tests.

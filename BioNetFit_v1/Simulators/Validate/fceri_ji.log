@@ -1,0 +1,92 @@
+[validate fceri_ji]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.bngl
+[child process ID is: 7711]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.bngl (level 0)
+Read 26 parameters.
+Read 4 species.
+Adding pY as allowed state of component b of molecule Rec
+Adding pY as allowed state of component g of molecule Rec
+Adding pY as allowed state of component l of molecule Syk
+Adding pY as allowed state of component a of molecule Syk
+Read 19 reaction rule(s).
+Read 10 observable(s).
+ACTION: generate_network( fceri_ji )
+Iteration   0:     4 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     6 species      2 rxns  1.00e-02 CPU s
+Iteration   2:     9 species      8 rxns  0.00e+00 CPU s
+Iteration   3:    12 species     20 rxns  2.00e-02 CPU s
+Iteration   4:    22 species     36 rxns  3.00e-02 CPU s
+Iteration   5:    43 species    100 rxns  7.00e-02 CPU s
+Iteration   6:    78 species    255 rxns  1.90e-01 CPU s
+Iteration   7:   139 species    586 rxns  4.10e-01 CPU s
+Iteration   8:   199 species   1190 rxns  8.20e-01 CPU s
+Iteration   9:   303 species   1841 rxns  1.03e+00 CPU s
+Iteration  10:   354 species   3143 rxns  1.80e+00 CPU s
+Iteration  11:   354 species   3680 rxns  7.70e-01 CPU s
+Cumulative CPU time for each rule
+Rule   1:    48 reactions 1.10e-01 CPU s 2.29e-03 CPU s/rxn
+Rule   2:  1152 reactions 1.41e+00 CPU s 1.22e-03 CPU s/rxn
+Rule   3:   312 reactions 4.30e-01 CPU s 1.38e-03 CPU s/rxn
+Rule   4:    36 reactions 1.10e-01 CPU s 3.06e-03 CPU s/rxn
+Rule   5:    24 reactions 7.00e-02 CPU s 2.92e-03 CPU s/rxn
+Rule   6:   312 reactions 4.30e-01 CPU s 1.38e-03 CPU s/rxn
+Rule   7:    36 reactions 6.00e-02 CPU s 1.67e-03 CPU s/rxn
+Rule   8:    24 reactions 7.00e-02 CPU s 2.92e-03 CPU s/rxn
+Rule   9:   832 reactions 1.09e+00 CPU s 1.31e-03 CPU s/rxn
+Rule  10:    48 reactions 1.20e-01 CPU s 2.50e-03 CPU s/rxn
+Rule  11:    48 reactions 1.10e-01 CPU s 2.29e-03 CPU s/rxn
+Rule  12:    64 reactions 1.80e-01 CPU s 2.81e-03 CPU s/rxn
+Rule  13:    64 reactions 1.40e-01 CPU s 2.19e-03 CPU s/rxn
+Rule  14:   156 reactions 1.70e-01 CPU s 1.09e-03 CPU s/rxn
+Rule  15:   104 reactions 1.00e-01 CPU s 9.62e-04 CPU s/rxn
+Rule  16:   208 reactions 2.60e-01 CPU s 1.25e-03 CPU s/rxn
+Rule  17:   208 reactions 2.60e-01 CPU s 1.25e-03 CPU s/rxn
+Rule  18:     2 reactions 2.00e-02 CPU s 1.00e-02 CPU s/rxn
+Rule  19:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Total   :  3680 reactions 5.15e+00 CPU s 1.40e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net.
+CPU TIME: generate_network 5.27 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji -p cvode -a 1e-08 -r 1e-08 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net 60 10
+[simulation PID is: 7715]
+run_network 3.0
+Read 26 parameters
+Read 354 species
+Read 10 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.net
+Read 0 function(s)
+Read 3680 reaction(s)
+Removed 600 reactions with zero rate
+3080 reaction(s) have nonzero rate
+Initialization took 0.03 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.gdat.
+Propagation took 7.20e-01 CPU seconds
+Program times:  0.75 CPU s 1.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.cdat
+CPU TIME: simulate_ode 0.87 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.bngl.
+CPU TIME: total 6.17 s.
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/fceri_ji.cdat
+[child process ID is: 7718]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/fceri_ji.cdat
+PASSED!!  norm error (3.325373E-09) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/fceri_ji.gdat
+[child process ID is: 7719]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/fceri_ji.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/fceri_ji.gdat
+PASSED!!  norm error (3.625076E-08) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+fceri_ji passed all validation tests.

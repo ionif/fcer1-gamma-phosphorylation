@@ -1,0 +1,107 @@
+[validate SHP2_base_model]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.bngl
+[child process ID is: 7850]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.bngl (level 0)
+Read 24 parameters.
+Read 2 molecule types.
+Read 2 species.
+Read 23 reaction rule(s).
+Read 1 observable(s).
+ACTION: generate_network( SHP2_base_model )
+Iteration   0:     2 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     5 species      3 rxns  1.00e-02 CPU s
+Iteration   2:    18 species     21 rxns  2.00e-02 CPU s
+Iteration   3:    47 species    115 rxns  1.10e-01 CPU s
+Iteration   4:    90 species    332 rxns  2.80e-01 CPU s
+Iteration   5:   122 species    626 rxns  4.80e-01 CPU s
+Iteration   6:   149 species    877 rxns  4.40e-01 CPU s
+Iteration   7:   149 species   1032 rxns  4.10e-01 CPU s
+Cumulative CPU time for each rule
+Rule   1:    72 reactions 8.00e-02 CPU s 1.11e-03 CPU s/rxn
+Rule   2:    98 reactions 1.30e-01 CPU s 1.33e-03 CPU s/rxn
+Rule   3:   192 reactions 2.30e-01 CPU s 1.20e-03 CPU s/rxn
+Rule   4:    96 reactions 1.60e-01 CPU s 1.67e-03 CPU s/rxn
+Rule   5:   144 reactions 2.10e-01 CPU s 1.46e-03 CPU s/rxn
+Rule   6:    72 reactions 1.20e-01 CPU s 1.67e-03 CPU s/rxn
+Rule   7:    62 reactions 1.30e-01 CPU s 2.10e-03 CPU s/rxn
+Rule   8:    18 reactions 3.00e-02 CPU s 1.67e-03 CPU s/rxn
+Rule   9:    28 reactions 8.00e-02 CPU s 2.86e-03 CPU s/rxn
+Rule  10:    28 reactions 3.00e-02 CPU s 1.07e-03 CPU s/rxn
+Rule  11:    18 reactions 4.00e-02 CPU s 2.22e-03 CPU s/rxn
+Rule  12:    28 reactions 6.00e-02 CPU s 2.14e-03 CPU s/rxn
+Rule  13:    28 reactions 5.00e-02 CPU s 1.79e-03 CPU s/rxn
+Rule  14:    28 reactions 6.00e-02 CPU s 2.14e-03 CPU s/rxn
+Rule  15:    28 reactions 5.00e-02 CPU s 1.79e-03 CPU s/rxn
+Rule  16:    28 reactions 5.00e-02 CPU s 1.79e-03 CPU s/rxn
+Rule  17:    28 reactions 5.00e-02 CPU s 1.79e-03 CPU s/rxn
+Rule  18:     6 reactions 3.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule  19:     6 reactions 4.00e-02 CPU s 6.67e-03 CPU s/rxn
+Rule  20:     6 reactions 2.00e-02 CPU s 3.33e-03 CPU s/rxn
+Rule  21:     6 reactions 3.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule  22:     6 reactions 4.00e-02 CPU s 6.67e-03 CPU s/rxn
+Rule  23:     6 reactions 3.00e-02 CPU s 5.00e-03 CPU s/rxn
+Total   :  1032 reactions 1.75e+00 CPU s 1.70e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net.
+CPU TIME: generate_network 1.78 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model -p cvode -a 1e-10 -r 1e-08 -c --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net 10 100
+[simulation PID is: 7852]
+run_network 3.0
+Read 40 parameters
+Read 149 species
+Read 1 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net
+Read 0 function(s)
+Read 1032 reaction(s)
+1032 reaction(s) have nonzero rate
+Initialization took 0.01 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.gdat.
+Propagation took 5.00e-02 CPU seconds
+Program times:  0.06 CPU s 0.00 clock s 
+Simulation reached steady state by t_end=1000
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.cdat
+CPU TIME: simulate_ode 0.10 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.bngl.
+CPU TIME: total 1.93 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net
+[child process ID is: 7853]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net
+[child process ID is: 7854]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.cdat
+[child process ID is: 7857]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.cdat
+PASSED!!  norm error (4.156153E-13) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.gdat
+[child process ID is: 7858]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/SHP2_base_model.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/SHP2_base_model.gdat
+PASSED!!  norm error (1.820430E-09) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+SHP2_base_model passed all validation tests.

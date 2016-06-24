@@ -1,0 +1,18 @@
+BioNetFit was developed primarily by Brandon Thomas 
+(brandon.thomas@nau.edu). It is supported by the Posner and Hlavacek 
+laboratories. For help, write to bionetgen.help@gmail.com. Emails sent 
+to this address will reach all BioNetFit developers as well as the larger 
+BioNetGen developer community. If BioNetFit is useful for you, please let 
+us know and please cite the reference below.
+
+Thomas BR, Chylek LA, Colvin J, Sirimulla S, Clayton AHA, Hlavacek WS, 
+Posner RG (2015) BioNetFit: a fitting tool compatible with BioNetGen, 
+NFsim, and distributed computing environments. Los Alamos Technical 
+Report LA-UR-15-xxxxx.
+
+Author contributions: BRT and JC wrote the code. RGP and WSH initiated 
+the development of BioNetFit. The software was designed by BRT, JC, LAC, 
+WSH, and RGP. LAC and SS extensively tested the software and assisted in 
+debugging. AHAC assisted in the design of demonstration fitting runs. 
+BRT, WSH, LAC, and RGP wrote the BioNetFit documentation. All authors have 
+tested the software and read the BioNetFit documentation.

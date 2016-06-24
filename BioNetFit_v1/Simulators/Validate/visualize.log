@@ -1,0 +1,67 @@
+[validate visualize]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize.bngl
+[child process ID is: 7954]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize.bngl (level 0)
+Read 9 parameters.
+Read 4 molecule types.
+Read 4 species.
+Read 6 reaction rule(s).
+Executing visualize() command.
+Building network graphs for individual rules.
+Wrote contact map of model in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_contactmap.gml.
+CPU TIME: visualize 0.01 s.
+Executing visualize() command.
+Wrote rule(s) with patterns in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_ruleviz_pattern.gml.
+CPU TIME: visualize 0.01 s.
+Executing visualize() command.
+Wrote rule(s) with graph operations in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_ruleviz_operation.gml.
+CPU TIME: visualize 0.00 s.
+Executing visualize() command.
+Compiling network graph for whole model.
+Wrote network of rules and atomic patterns in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_regulatory_1.gml.
+CPU TIME: visualize 0.01 s.
+Processing Opts file visualize_opts1.txt
+Executing visualize() command.
+Computing background.
+Filtering background.
+Wrote network of rules and atomic patterns in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_regulatory_2.gml.
+CPU TIME: visualize 0.00 s.
+Processing Opts file visualize_opts1.txt
+Processing Opts file visualize_opts2.txt
+Executing visualize() command.
+Computing background.
+Filtering background.
+Creating classes of atomic patterns and rules.
+Wrote network of rules and atomic patterns in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_regulatory_3.gml.
+CPU TIME: visualize 0.00 s.
+Processing Opts file visualize_opts1.txt
+Processing Opts file visualize_opts2.txt
+Executing visualize() command.
+Computing background.
+Filtering background.
+Creating classes of atomic patterns and rules.
+Collapsing network graph using equivalence classes.
+Wrote network of rules and atomic patterns in GML format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize_regulatory_4.gml.
+CPU TIME: visualize 0.01 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/visualize.bngl.
+CPU TIME: total 0.05 s.
+-------------------------------------------------------------------------------
+ -> checking visualization outputs
+ ->-> checking contact map
+-------------------------------------------------------------------------------
+ ->-> checking rule visualization using patterns
+-------------------------------------------------------------------------------
+ ->-> checking rule visualization using graph operations
+-------------------------------------------------------------------------------
+ ->-> checking regulatory graph
+-------------------------------------------------------------------------------
+ ->-> checking background assignment
+-------------------------------------------------------------------------------
+ ->-> checking group assignment
+-------------------------------------------------------------------------------
+ ->-> checking collapsing groups
+-------------------------------------------------------------------------------
+visualize passed all validation tests.

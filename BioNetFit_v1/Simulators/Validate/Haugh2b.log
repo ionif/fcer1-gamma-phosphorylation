@@ -1,0 +1,93 @@
+[validate Haugh2b]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.bngl
+[child process ID is: 7735]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.bngl (level 0)
+Read 12 parameters.
+Read 3 species.
+Adding P as allowed state of component Y of molecule S2
+Read 11 reaction rule(s).
+Read 5 observable(s).
+ACTION: generate_network( Haugh2b )
+Iteration   0:     3 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     5 species      2 rxns  0.00e+00 CPU s
+Iteration   2:     6 species      5 rxns  1.00e-02 CPU s
+Iteration   3:     7 species      7 rxns  0.00e+00 CPU s
+Iteration   4:    10 species     10 rxns  0.00e+00 CPU s
+Iteration   5:    12 species     21 rxns  2.00e-02 CPU s
+Iteration   6:    12 species     29 rxns  1.00e-02 CPU s
+Cumulative CPU time for each rule
+Rule   1:     4 reactions 1.00e-02 CPU s 2.50e-03 CPU s/rxn
+Rule   2:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   3:     6 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   4:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule   5:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   6:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   7:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule   8:     2 reactions 1.00e-02 CPU s 5.00e-03 CPU s/rxn
+Rule   9:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  10:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule  11:     4 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :    29 reactions 4.00e-02 CPU s 1.38e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net.
+CPU TIME: generate_network 0.04 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b -p cvode -a 1e-12 -r 1e-12 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net 10 5
+[simulation PID is: 7737]
+run_network 3.0
+Read 15 parameters
+Read 12 species
+Read 5 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net
+Read 0 function(s)
+Read 29 reaction(s)
+29 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using dense LU
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.cdat
+CPU TIME: simulate_ode 0.01 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.bngl.
+CPU TIME: total 0.07 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net
+[child process ID is: 7738]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net
+[child process ID is: 7739]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.cdat
+[child process ID is: 7740]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.cdat
+PASSED!!  norm error (0.000000E+00) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.gdat
+[child process ID is: 7741]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/Haugh2b.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/Haugh2b.gdat
+PASSED!!  norm error (2.704196E-11) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+Haugh2b passed all validation tests.

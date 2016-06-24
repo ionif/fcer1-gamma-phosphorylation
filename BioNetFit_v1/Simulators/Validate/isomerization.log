@@ -1,0 +1,75 @@
+[validate isomerization]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization.bngl
+[child process ID is: 7786]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization.bngl (level 0)
+Read 3 parameters.
+Read 1 molecule types.
+Read 1 species.
+Read 3 observable(s).
+Read 1 reaction rule(s).
+ACTION: generate_network( isomerization )
+Iteration   0:     1 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     2 species      1 rxns  0.00e+00 CPU s
+Iteration   2:     2 species      2 rxns  0.00e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :     2 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization.net.
+CPU TIME: generate_network 0.00 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin -p ssa -h 793220950 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.net 10000 1
+[simulation PID is: 7788]
+run_network 3.0
+Read 3 parameters
+Read 2 species
+Read 3 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.net
+Read 0 function(s)
+Read 2 reaction(s)
+2 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 2.00
+Initialization took 0.00 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 66331           
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.gdat.
+Propagation took 1.00e-02 CPU seconds
+Program times:  0.01 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_burnin.cdat
+CPU TIME: simulate_ssa 0.02 s.
+ACTION: simulate( method=>"ssa" )
+Network simulation using ssa
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil -p ssa -h 1744343231 --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.net 100 10000
+[simulation PID is: 7790]
+run_network 3.0
+Read 3 parameters
+Read 2 species
+Read 3 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.net
+Read 0 function(s)
+Read 2 reaction(s)
+2 reaction(s) have nonzero rate
+rxn_rate_update_interval=1
+Average number of update rxns is 2.00
+Initialization took 0.00 CPU seconds
+Stochastic simulation using direct Gillespie algorithm
+TOTAL STEPS: 6666201         
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.gdat.
+Propagation took 6.90e-01 CPU seconds
+Program times:  0.69 CPU s 1.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization_ssa_equil.cdat
+CPU TIME: simulate_ssa 0.72 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/isomerization.bngl.
+CPU TIME: total 0.74 s.
+-------------------------------------------------------------------------------
+ -> checking SSA equilibrium distribution
+-------------------------------------------------------------------------------
+isomerization passed all validation tests.

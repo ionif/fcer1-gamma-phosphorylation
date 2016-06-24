@@ -1,0 +1,50 @@
+BioNetGen version UNKNOWN
+Reading from file /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/gamma2both_perm1.bngl (level 0)
+Read 42 parameters.
+Read 5 molecule types.
+Read 5 species.
+Read 9 observable(s).
+Read 1 functions.
+Read 68 reaction rule(s).
+ACTION: simulate_nf( )
+Wrote model in xml format to /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.xml.
+Running NFsim on hop0.usrc.newmexicoconsortium.org
+full command: /home/alex/work/alex/BioNetFit_v1/Simulators/bin/NFsim_x86_64-linux -xml /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.xml -o /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.gdat -sim 300 -oSteps 5 -gml 200000000 -ss /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.species -cb -ogf
+[simulation PID is: 15994]
+starting NFsim v1.11...
+
+reading xml file (/home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.xml)  
+	[-------]
+preparing simulation...
+
+
+
+Equilibrating for :0s.  Please wait.
+
+simulating system for: 3.000000e+02 second(s).
+
+Sim time: 0.000000e+00	CPU time (total): 1.080000e-04s	 events (step): 0
+Sim time: 6.000000e+01	CPU time (total): 2.785689e+02s	 events (step): 26357917
+Sim time: 1.200000e+02	CPU time (total): 3.780746e+02s	 events (step): 8549060
+Sim time: 1.800000e+02	CPU time (total): 4.052269e+02s	 events (step): 2571076
+Sim time: 2.400000e+02	CPU time (total): 4.130884e+02s	 events (step): 785862
+Sim time: 3.000000e+02	CPU time (total): 4.159506e+02s	 events (step): 259585
+
+   You just simulated 38523501 reactions in 4.159507e+02s
+   ( 9.261555e+04 reactions/sec, 1.079732e-05 CPU seconds/event )
+   Null events: 0   (1.079732e-05 CPU seconds/non-null event )
+
+
+saving list of final molecular species...
+
+done.  Total CPU time: 426.474s
+
+SpeciesLabel max molecule threshold set to 20.
+WARNING: Species with more than 20 molecules will be labeled with the Quasi method.
+readNFspecies::Reading from file /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/0/gamma2both_perm1_gamma.species
+Read 11 unique species of 16 total.
+SpeciesLabel max molecule threshold set to 0.
+  (all species will be labeled with the Auto method)
+CPU TIME: simulate_nf 426.91 s.
+Finished processing file /home/alex/work/alex/BioNetFit_v1/output/gamma2both/1/gamma2both_perm1.bngl.
+CPU TIME: total 427.17 s.

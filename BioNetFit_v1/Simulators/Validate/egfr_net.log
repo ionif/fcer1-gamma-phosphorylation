@@ -1,0 +1,120 @@
+[validate egfr_net]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.bngl
+[child process ID is: 7695]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.bngl (level 0)
+Read 48 parameters.
+Read 5 molecule types.
+Read 6 species.
+Read 23 reaction rule(s).
+Read 15 observable(s).
+ACTION: generate_network( egfr_net )
+Iteration   0:     6 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     7 species      3 rxns  0.00e+00 CPU s
+Iteration   2:     8 species      5 rxns  1.00e-02 CPU s
+Iteration   3:    10 species      8 rxns  1.00e-02 CPU s
+Iteration   4:    19 species     21 rxns  2.00e-02 CPU s
+Iteration   5:    37 species     76 rxns  9.00e-02 CPU s
+Iteration   6:    69 species    213 rxns  2.20e-01 CPU s
+Iteration   7:   131 species    494 rxns  5.00e-01 CPU s
+Iteration   8:   295 species   1260 rxns  1.57e+00 CPU s
+Iteration   9:   356 species   3088 rxns  4.13e+00 CPU s
+Iteration  10:   356 species   3749 rxns  1.87e+00 CPU s
+Cumulative CPU time for each rule
+Rule   1:    48 reactions 9.00e-02 CPU s 1.87e-03 CPU s/rxn
+Rule   2:   600 reactions 2.06e+00 CPU s 3.43e-03 CPU s/rxn
+Rule   3:   144 reactions 2.50e-01 CPU s 1.74e-03 CPU s/rxn
+Rule   4:    96 reactions 1.40e-01 CPU s 1.46e-03 CPU s/rxn
+Rule   5:   156 reactions 2.20e-01 CPU s 1.41e-03 CPU s/rxn
+Rule   6:   104 reactions 1.40e-01 CPU s 1.35e-03 CPU s/rxn
+Rule   7:    96 reactions 1.90e-01 CPU s 1.98e-03 CPU s/rxn
+Rule   8:   104 reactions 1.60e-01 CPU s 1.54e-03 CPU s/rxn
+Rule   9:   312 reactions 5.80e-01 CPU s 1.86e-03 CPU s/rxn
+Rule  10:   312 reactions 5.90e-01 CPU s 1.89e-03 CPU s/rxn
+Rule  11:   312 reactions 6.50e-01 CPU s 2.08e-03 CPU s/rxn
+Rule  12:   208 reactions 3.80e-01 CPU s 1.83e-03 CPU s/rxn
+Rule  13:   208 reactions 3.80e-01 CPU s 1.83e-03 CPU s/rxn
+Rule  14:   208 reactions 4.90e-01 CPU s 2.36e-03 CPU s/rxn
+Rule  15:   208 reactions 5.20e-01 CPU s 2.50e-03 CPU s/rxn
+Rule  16:   208 reactions 4.50e-01 CPU s 2.16e-03 CPU s/rxn
+Rule  17:   208 reactions 4.90e-01 CPU s 2.36e-03 CPU s/rxn
+Rule  18:   208 reactions 4.80e-01 CPU s 2.31e-03 CPU s/rxn
+Rule  19:     2 reactions 5.00e-02 CPU s 2.50e-02 CPU s/rxn
+Rule  20:     2 reactions 3.00e-02 CPU s 1.50e-02 CPU s/rxn
+Rule  21:     1 reactions 2.00e-02 CPU s 2.00e-02 CPU s/rxn
+Rule  22:     2 reactions 3.00e-02 CPU s 1.50e-02 CPU s/rxn
+Rule  23:     2 reactions 2.00e-02 CPU s 1.00e-02 CPU s/rxn
+Total   :  3749 reactions 8.41e+00 CPU s 2.24e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net.
+CPU TIME: generate_network 8.58 s.
+Set concentration of species egf(r) to value 0
+CPU TIME: setConcentration 0.00 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net -p cvode -a 1e-08 -r 1e-08 -b -c --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net 10000 10
+[simulation PID is: 7701]
+run_network 3.0
+Read 48 parameters
+Read 356 species
+Read 15 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net
+Read 0 function(s)
+Read 3749 reaction(s)
+3749 reaction(s) have nonzero rate
+Initialization took 0.03 CPU seconds
+Propagating with cvode using GMRES
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.gdat.
+Propagation took 2.00e-02 CPU seconds
+Program times:  0.05 CPU s 0.00 clock s 
+Simulation reached steady state by t_end=100000
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat
+CPU TIME: simulate_ode 0.18 s.
+Set concentration of species egf(r) to value egf_tot
+CPU TIME: setConcentration 0.00 s.
+Wrote SBML to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net_sbml.xml.
+CPU TIME: writeSBML 0.08 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+WARNING: writeFile(): Overwriting existing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net.
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net -p cvode -a 1e-08 -r 1e-08 -b --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net 1 120
+[simulation PID is: 7703]
+run_network 3.0
+Read 48 parameters
+Read 356 species
+Read 15 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.net
+Read 0 function(s)
+Read 3749 reaction(s)
+3749 reaction(s) have nonzero rate
+Initialization took 0.03 CPU seconds
+Propagating with cvode using GMRES
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.gdat.
+Propagation took 1.20e-01 CPU seconds
+Program times:  0.15 CPU s 0.00 clock s 
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat
+CPU TIME: simulate_ode 0.30 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.bngl.
+CPU TIME: total 9.19 s.
+-------------------------------------------------------------------------------
+ -> checking species trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/egfr_net.cdat
+[child process ID is: 7704]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.cdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/egfr_net.cdat
+PASSED!!  norm error (1.018992E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+ -> checking observable trajectory
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.gdat /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/egfr_net.gdat
+[child process ID is: 7705]
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Perl2/verify.pl is comparing /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/egfr_net.gdat and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/egfr_net.gdat
+PASSED!!  norm error (8.807630E-10) <= threshold error (1.000000E-07).
+-------------------------------------------------------------------------------
+egfr_net passed all validation tests.

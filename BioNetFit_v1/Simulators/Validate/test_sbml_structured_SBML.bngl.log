@@ -1,0 +1,5 @@
+INFO:Atomization.0: added induced naming convention [['MolA'], ['MolA_P']]
+INFO:Atomization.1: added induced naming convention [['MolA'], ['MolA_P']]
+SIMULATION:CRITICAL.2: Boundary condition/assignment type variables (A____) are not properly                     supported in BioNetGen simulator
+SIMULATION:CRITICAL.3: Boundary condition/assignment type variables (B____) are not properly                     supported in BioNetGen simulator
+INFO:Summary.4: File contains 2 molecules out of 5 original SBML species

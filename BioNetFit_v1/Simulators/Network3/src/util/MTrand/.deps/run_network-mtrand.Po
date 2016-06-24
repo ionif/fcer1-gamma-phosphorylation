@@ -1,0 +1,6 @@
+util/MTrand/run_network-mtrand.o: util/MTrand/mtrand.cpp \
+ /usr/include/stdc-predef.h util/MTrand/mtrand.h
+
+/usr/include/stdc-predef.h:
+
+util/MTrand/mtrand.h:

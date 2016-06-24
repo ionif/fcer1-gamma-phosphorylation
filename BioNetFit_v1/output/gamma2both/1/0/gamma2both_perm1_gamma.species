@@ -1,0 +1,18 @@
+# nfsim generated species list for system: 'gamma2both_perm1'
+# warning! this feature is not yet fully tested! 
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~0,Y2~0).Lyn(U,SH2!3).Lyn(U,SH2!4)  5
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~0,Y2~P).Lyn(U,SH2!3).Lyn(U,SH2!4)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~P!5,Y2~P!6).Lyn(U,SH2!3).Lyn(U,SH2!4).P(SH2!5).Syk(nSH2!6,cSH2,l~pY,a~Y)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~P!5,Y2~P).Lyn(U,SH2!3).Lyn(U,SH2!4).P(SH2!5)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~0,Y2~0).Rec(a!2,b~pY!4,Y1~P,Y2~0).Lyn(U,SH2!3).Lyn(U,SH2!4)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~P!4,Y2~0).Rec(a!2,b~pY!5,Y1~0,Y2~0).Lyn(U,SH2!3).P(SH2!4).Lyn(U,SH2!5)  2
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~P!4,Y2~0).Rec(a!2,b~pY!5,Y1~0,Y2~P).Lyn(U,SH2!3).P(SH2!4).Lyn(U,SH2!5)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~P!4,Y2~P!5).Rec(a!2,b~pY!6,Y1~0,Y2~0).Lyn(U,SH2!3).P(SH2!4).Syk(nSH2!5,cSH2,l~Y,a~Y).Lyn(U,SH2!6)  1
+Lig(l!1,l!2).Rec(a!1,b~pY!3,Y1~P!4,Y2~P).Rec(a!2,b~pY!5,Y1~P!6,Y2~P!7).Lyn(U,SH2!3).Syk(nSH2,cSH2!4,l~Y,a~pY).Lyn(U,SH2!5).Syk(nSH2,cSH2!6,l~pY,a~pY).Syk(nSH2!7,cSH2,l~pY,a~pY)  1
+Lig(l,l!1).Rec(a!1,b~Y,Y1~0,Y2~0)  1
+Lig(l,l)  3007847
+Lyn(U!1,SH2).Rec(a,b~Y!1,Y1~0,Y2~0)  34
+Lyn(U,SH2)  21433
+P(SH2)  735
+Rec(a,b~Y,Y1~0,Y2~0)  75
+Syk(nSH2,cSH2,l~Y,a~Y)  239

@@ -1,0 +1,79 @@
+[validate toy-jim]
+ -> processing model file with BioNetGen
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/BNG2.pl --no-nfsim --outdir /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.bngl
+[child process ID is: 7942]
+BioNetGen version 2.2.6
+Reading from file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.bngl (level 0)
+Read 16 parameters.
+Read 5 species.
+Adding P as allowed state of component Y of molecule K
+Read 8 reaction rule(s).
+Read 9 observable(s).
+ACTION: generate_network( toy-jim )
+Iteration   0:     5 species      0 rxns  0.00e+00 CPU s
+Iteration   1:     8 species      3 rxns  1.00e-02 CPU s
+Iteration   2:    12 species     12 rxns  1.00e-02 CPU s
+Iteration   3:    17 species     29 rxns  2.00e-02 CPU s
+Iteration   4:    18 species     51 rxns  5.00e-02 CPU s
+Iteration   5:    24 species     58 rxns  1.00e-02 CPU s
+Iteration   6:    25 species     97 rxns  6.00e-02 CPU s
+Iteration   7:    25 species    101 rxns  1.00e-02 CPU s
+Cumulative CPU time for each rule
+Rule   1:     8 reactions 3.00e-02 CPU s 3.75e-03 CPU s/rxn
+Rule   2:    20 reactions 4.00e-02 CPU s 2.00e-03 CPU s/rxn
+Rule   3:    36 reactions 5.00e-02 CPU s 1.39e-03 CPU s/rxn
+Rule   4:    28 reactions 4.00e-02 CPU s 1.43e-03 CPU s/rxn
+Rule   5:     1 reactions 1.00e-02 CPU s 1.00e-02 CPU s/rxn
+Rule   6:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   7:     6 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Rule   8:     1 reactions 0.00e+00 CPU s 0.00e+00 CPU s/rxn
+Total   :   101 reactions 1.70e-01 CPU s 1.68e-03 CPU s/rxn
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net.
+CPU TIME: generate_network 0.17 s.
+ACTION: simulate( method=>"cvode" )
+Network simulation using cvode
+Wrote network in net format to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.net.
+Running run_network on dingpc
+full command: /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/bin/run_network -o /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil -p cvode -a 1e-10 -r 1e-08 -b -c --cdat 1 --fdat 0 -g /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.net 100 10
+[simulation PID is: 7944]
+run_network 3.0
+Read 16 parameters
+Read 25 species
+Read 9 group(s) from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.net
+Read 0 function(s)
+Read 101 reaction(s)
+101 reaction(s) have nonzero rate
+Initialization took 0.00 CPU seconds
+Propagating with cvode using GMRES
+Time course of concentrations written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.cdat.
+Time course of groups written to file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.gdat.
+Propagation took 0.00e+00 CPU seconds
+Program times:  0.00 CPU s 0.00 clock s 
+Simulation reached steady state by t_end=1000
+Updating species concentrations from /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_equil.cdat
+CPU TIME: simulate_ode 0.02 s.
+Wrote SBML to /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim_sbml.xml.
+CPU TIME: writeSBML 0.00 s.
+Finished processing file /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.bngl.
+CPU TIME: total 0.20 s.
+-------------------------------------------------------------------------------
+ -> checking species in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net
+[child process ID is: 7945]
+Testing Species..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_species.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net passed species test.
+
+-------------------------------------------------------------------------------
+ -> checking reactions in .NET file
+running command:
+/usr/bin/perl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net
+[child process ID is: 7946]
+Testing Reaction Network..
+command:  /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/compare_rxn.pl /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net 
+/home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/toy-jim.net and /home/roc60/bionetgen2/bionetgen/bng2/BioNetGen-2.2.6-stable/Validate/DAT_validate/toy-jim.net passed reaction network test.
+
+-------------------------------------------------------------------------------
+toy-jim passed all validation tests.
