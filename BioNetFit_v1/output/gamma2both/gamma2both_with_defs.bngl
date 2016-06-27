@@ -13,8 +13,12 @@
 ##    Nature Methods 8, 177–183 (2011).
 begin model
 begin parameters
+
+#10 permutations, 10 generations
 catp__FREE__=1 #Free parameter definition inserted by BioNetFit
 de__FREE__=1 #Free parameter definition inserted by BioNetFit
+   
+   
     # constants
     NA    6.0221e23  # Avogadro's number
     PI    3.1415927  # Pi
