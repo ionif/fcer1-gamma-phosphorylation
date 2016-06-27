@@ -1,5 +1,5 @@
-# catp__FREE__ changed to 2.73401100407139
-# de__FREE__ changed to 0.00969155464267696
+# catp__FREE__ changed to 0.000250414203394932
+# de__FREE__ changed to 0.0221634976617084
 # End of permute change log
 ## fceri_gamma2.bngl
 ## FceRI receptor activation model
@@ -16,8 +16,8 @@
 ##    Nature Methods 8, 177–183 (2011).
 begin model
 begin parameters
-catp__FREE__ 2.73401100407139
-de__FREE__ 0.00969155464267696
+catp__FREE__ 0.000250414203394932
+de__FREE__ 0.0221634976617084
     # constants
     NA    6.0221e23  # Avogadro's number
     PI    3.1415927  # Pi

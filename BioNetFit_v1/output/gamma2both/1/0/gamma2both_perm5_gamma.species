@@ -1,6 +1,6 @@
 # nfsim generated species list for system: 'gamma2both_perm5'
 # warning! this feature is not yet fully tested! 
-Lig(l,l)  3009780
-Lyn(U,SH2)  23565
-P(SH2)  2094
-Syk(nSH2,cSH2,l~Y,a~Y)  1189
+Lig(l,l)  3010312
+Lyn(U,SH2)  23934
+P(SH2)  1846
+Syk(nSH2,cSH2,l~Y,a~Y)  2054
